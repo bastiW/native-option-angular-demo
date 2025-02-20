@@ -4,7 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build"
+    "build": "ng build",
+    "deploy:gh": "ng deploy --base-href=/native-option-angular-demo/"
   },
   "dependencies": {
     "@angular/animations": "^19.0.6",
