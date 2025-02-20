@@ -4,6 +4,9 @@ on:
   push:
     branches: [ "main" ]
 
+permissions:
+  contents: write  # Ensure the token can push changes to the repository
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -23,14 +26,10 @@ jobs:
 
       - name: Build Angular project
         run: npm run build --if-present
-        # If necessary, try: ng build --configuration production
-
-      - name: List built artifacts
-        run: ls -la dist
-        # This step helps confirm which folder(s) were generated.
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages           # The branch the action should deploy to.
-          folder: dist/angular-option-list  # Adjust this if your build outputs to a different folder.
+          branch: gh-pages                   
+          folder: dist/angular-option-list  
+          token: ${{ secrets.GITHUB_TOKEN }
