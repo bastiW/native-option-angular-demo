@@ -32,4 +32,4 @@ jobs:
         with:
           branch: gh-pages                   
           folder: dist/angular-option-list  
-          token: ${{ secrets.GITHUB_TOKEN }
+          token: ${{ secrets.GITHUB_TOKEN }}
