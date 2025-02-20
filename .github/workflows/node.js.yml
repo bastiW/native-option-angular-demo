@@ -23,11 +23,14 @@ jobs:
 
       - name: Build Angular project
         run: npm run build --if-present
-        # If you use the Angular CLI, ensure your package.json "build" script calls "ng build"
-        # You might also use: run: ng build --configuration production
+        # If necessary, try: ng build --configuration production
+
+      - name: List built artifacts
+        run: ls -la dist
+        # This step helps confirm which folder(s) were generated.
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages                  # The branch the action should deploy to.
-          folder: dist/angular-option-list  # The folder with your built Angular app.
+          branch: gh-pages           # The branch the action should deploy to.
+          folder: dist/angular-option-list  # Adjust this if your build outputs to a different folder.
