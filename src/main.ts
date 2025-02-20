@@ -104,6 +104,7 @@ import { countries as optionCountries, fruits } from './options';
       border: 1px solid #ccc;
       border-radius: 4px;
       box-sizing: border-box;
+      font-size: 16px;
     }
     h2 {
       margin-top: 1.5rem;
